@@ -1,0 +1,57 @@
+@import "variables";
+@import "_mixin";
+
+.flex-productos {
+    @include flex-center(row, wrap, center, stretch);
+    gap: 1.5rem;
+    padding: 1rem;
+
+    .producto {
+        flex: 1 1 250px;
+        max-width: 300px;
+        background-color: white;
+        border-radius: $border-radius;
+        @include box-shadow();
+        padding: 1rem;
+        text-align: center;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+
+        h3 {
+            margin-top: 0.8rem;
+            color: $primary-color;
+            font-size: 1.2rem;
+        }
+
+        p,
+        .precio {
+            font-weight: bold;
+            color: $primary-color;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        button {
+            background-color: $primary-color;
+            color: white;
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+
+            &:hover {
+                background-color: darken($primary-color, 20%);
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: $border-radius;
+    }
+}
