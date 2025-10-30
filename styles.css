@@ -49,6 +49,29 @@
   height: auto;
   border-radius: 8px;
 }
+@media (max-width: 768px) {
+  .flex-productos .producto {
+    flex: 1 1 100%;
+  }
+}
+@media (max-width: 480px) {
+  .flex-productos {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  .flex-productos .producto {
+    padding: 0.8rem;
+  }
+  .flex-productos .producto h3 {
+    font-size: 1rem;
+  }
+  .flex-productos .producto p, .flex-productos .producto .precio {
+    font-size: 1rem;
+  }
+  .flex-productos .producto button {
+    padding: 0.5rem 0.8rem;
+  }
+}
 
 .grid-productos {
   display: grid;
@@ -73,6 +96,25 @@
   width: 100%;
   height: auto;
   border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .grid-productos .grid-productos {
+    gap: 1rem;
+  }
+  .grid-productos .grid-productos .producto {
+    padding: 0.8rem;
+  }
+  .grid-productos .grid-productos .producto img {
+    border-radius: 6.6666666667px;
+  }
+}
+@media (max-width: 480px) {
+  .grid-productos .grid-productos {
+    gap: 0.8;
+  }
+  .grid-productos .grid-productos .producto {
+    padding: 0.5rem;
+  }
 }
 
 .sobre-nosotros-contenido {
@@ -100,6 +142,30 @@
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   object-fit: cover;
+}
+@media (max-width: 768px) {
+  .sobre-nosotros-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sobre-nosotros-contenido .texto,
+  .sobre-nosotros-contenido .imagenes {
+    flex: 1 1 100%;
+  }
+}
+@media (max-width: 480px) {
+  .sobre-nosotros-contenido {
+    gap: 1rem;
+  }
+  .sobre-nosotros-contenido .texto {
+    text-align: center;
+  }
+  .sobre-nosotros-contenido .imagenes {
+    gap: 0.5rem;
+  }
+  .sobre-nosotros-contenido .imagenes img {
+    max-width: 100%;
+  }
 }
 
 .servicios-lista {
@@ -141,6 +207,25 @@
 }
 .servicios-lista .servicio img:hover {
   transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .servicios-lista .servicio {
+    flex: 1 1 100%;
+  }
+}
+@media (max-width: 480px) {
+  .servicios-lista .servicio {
+    flex: 1 1 100%;
+  }
+  .servicios-lista .servicio img {
+    height: 150px;
+  }
+  .servicios-lista .servicio h3 {
+    font-size: 1.1rem;
+  }
+  .servicios-lista .servicio p {
+    font-size: 0.95rem;
+  }
 }
 
 #Contacto form {
@@ -193,6 +278,56 @@
 #Contacto form button:active {
   transform: translateY(0);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+  #Contacto form {
+    gap: 0.8rem;
+  }
+  #Contacto form input,
+  #Contacto form textarea {
+    font-size: 0.95;
+    padding: 0.7rem;
+  }
+  #Contacto form button {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+    align-self: stretch;
+  }
+}
+@media (max-width: 480px) {
+  #Contacto form {
+    gap: 0.6rem;
+  }
+  #Contacto form input,
+  #Contacto form textarea {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+  #Contacto form button {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+footer {
+  background-color: black;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+@media (max-width: 768px) {
+  footer {
+    font-size: 0.8rem;
+    padding: 0.8rem 0;
+  }
+}
+@media (max-width: 480px) {
+  footer {
+    font-size: 0.75;
+    padding: 0.6rem 0;
+  }
 }
 
 * {
@@ -256,15 +391,6 @@ section p {
   background-color: black;
 }
 
-footer {
-  background-color: black;
-  color: #ccc;
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  margin-top: 2rem;
-}
-
 @media (max-width: 768px) {
   main {
     flex-direction: column;
@@ -278,6 +404,31 @@ footer {
   }
   .flex-productos .producto {
     max-width: 90%;
+  }
+  .contacto-seccion {
+    padding: 3rem 1.5rem;
+  }
+  .btn-enviar {
+    font-size: 1rem;
+  }
+  form {
+    padding: 0.5rem;
+    gap: 0.8rem;
+  }
+  form input,
+  form textarea {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+}
+@media (max-width: 480px) {
+  form {
+    gap: 0.6;
+  }
+  form input,
+  form textarea {
+    font-size: 0.9rem;
+    padding: 0.6rem;
   }
 }
 

@@ -1,24 +1,50 @@
 @import "variables";
 @import "mixin";
 
-.sobre-nosotros-contenido{
+.sobre-nosotros-contenido {
     @include flex-center(row, wrap, flex-start, stretch);
     gap: 2rem;
 
-    .texto{
+    .texto {
         flex: 1 1 400px;
     }
 
-    .imagenes{
+    .imagenes {
         flex: 1 1 300px;
         @include flex-center(column, nowrap, flex-start, stretch);
         gap: 1rem;
 
-        img{
+        img {
             width: 100%;
             border-radius: $border-radius;
             @include box-shadow();
             object-fit: cover;
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+
+        .texto,
+        .imagenes {
+            flex: 1 1 100%;
+        }
+    }
+
+    @media (max-width:480px) {
+        gap: 1rem;
+
+        .texto{
+            text-align: center;
+        }
+
+        .imagenes{
+            gap: 0.5rem;
+
+            img{
+                max-width: 100%;
+            }
         }
     }
 }

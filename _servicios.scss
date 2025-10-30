@@ -1,11 +1,11 @@
 @import "variables";
 @import "mixin";
 
-.servicios-lista{
+.servicios-lista {
     @include flex-center(row, wrap, flex-start, stretch);
     gap: 1.5rem;
 
-    .servicio{
+    .servicio {
         flex: 1 1 300px;
         background-color: white;
         padding: 1rem;
@@ -13,23 +13,23 @@
         @include box-shadow($shadow-servicio);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-        &:hover{
+        &:hover {
             transform: translateY(-3px);
             @include box-shadow($shadow-servicio-hover);
         }
 
-        h3{
+        h3 {
             margin-bottom: 0.5rem;
             color: $primary-color;
             font-size: 1.2rem;
         }
 
-        p{
+        p {
             font-size: 1rem;
             color: #444;
         }
 
-        img{
+        img {
             width: 100%;
             height: 180px;
             object-fit: cover;
@@ -37,9 +37,34 @@
             margin-bottom: 0.8rem;
             transition: transform 0.3 ease;
 
-            &:hover{
+            &:hover {
                 transform: scale(1.05);
             }
+        }
+    }
+
+
+    @media (max-width: 768px) {
+        .servicio {
+            flex: 1 1 100%;
+        }
+    }
+
+    @media (max-width:480px) {
+        .servicio {
+            flex: 1 1 100%;
+        }
+
+        .servicio img {
+            height: 150px;
+        }
+
+        .servicio h3 {
+            font-size: 1.1rem;
+        }
+
+        .servicio p{
+            font-size: 0.95rem;
         }
     }
 }

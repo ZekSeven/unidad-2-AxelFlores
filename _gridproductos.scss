@@ -27,4 +27,28 @@
             border-radius: $border-radius;
         }
     }
+
+    @media (max-width: 768px) {
+        .grid-productos {
+            gap: 1rem;
+
+            .producto {
+                padding: 0.8rem;
+
+                img {
+                    border-radius: $border-radius / 1.2;
+                }
+            }
+        }
+    }
+
+    @media (max-width:480px) {
+        .grid-productos {
+            gap: 0.8;
+
+            .producto {
+                padding: 0.5rem;
+            }
+        }
+    }
 }
