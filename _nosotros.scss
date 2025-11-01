@@ -2,49 +2,91 @@
 @import "mixin";
 
 .sobre-nosotros-contenido {
-    @include flex-center(row, wrap, flex-start, stretch);
+    @include flex-center(row, wrap, space-between, stretch);
     gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    border-radius: $border-radius;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 1s ease-in-out;
+    color: #fff;
 
     .texto {
-        flex: 1 1 400px;
+        flex: 1 1 500px;
+        color: #000;
+        line-height: 1.6;
+        font-size: 1rem;
     }
 
     .imagenes {
-        flex: 1 1 300px;
-        @include flex-center(column, nowrap, flex-start, stretch);
+        flex: 1 1 350px;
+        padding: 0.5rem;
+        @include flex-center(column, nowrap, center, center);
         gap: 1rem;
 
         img {
             width: 100%;
+            max-width: 250px;
+            height: auto;
             border-radius: $border-radius;
             @include box-shadow();
             object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
+            opacity: 0.9;
+
+            &:hover {
+                transform: scale(1.03);
+                box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+                opacity: 1;
+            }
+        }
+    }
+
+    @keyframes fadeIn {
+        from{
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to{
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 
     @media (max-width: 768px) {
         flex-direction: column;
         align-items: center;
+        text-align: center;
 
-        .texto,
+        .texto {
+            flex: 1 1 100%;
+            max-width: 700px;
+        }
+
         .imagenes {
             flex: 1 1 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            img {
+                max-width: 150px;
+            }
         }
     }
 
     @media (max-width:480px) {
         gap: 1rem;
 
-        .texto{
-            text-align: center;
+        .texto {
+            font-size: 0.95rem;
         }
 
-        .imagenes{
-            gap: 0.5rem;
-
-            img{
-                max-width: 100%;
-            }
+        .imagenes img {
+            max-width: 130px;
         }
     }
 }

@@ -9,12 +9,14 @@
     .producto {
         flex: 1 1 250px;
         max-width: 300px;
-        background-color: white;
+        background-color: $section-bg;
         border-radius: $border-radius;
         @include box-shadow();
         padding: 1rem;
         text-align: center;
         transition: transform 0.2s ease;
+        opacity: 0;
+        animation: fadeIn 0.6s ease forwards;
 
         &:hover {
             transform: scale(1.03);
@@ -51,8 +53,23 @@
 
     img {
         width: 100%;
-        height: auto;
+        height: 200px;
+        object-fit: contain;
         border-radius: $border-radius;
+        margin-bottom: 1rem;
+    }
+
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     @media (max-width: 768px) {
@@ -72,11 +89,12 @@
                 font-size: 1rem;
             }
 
-            p, .precio{
+            p,
+            .precio {
                 font-size: 1rem;
             }
 
-            button{
+            button {
                 padding: 0.5rem 0.8rem;
             }
         }
